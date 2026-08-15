@@ -268,8 +268,6 @@ traceability table, see [`VERIFICATION_PLAN.md`](VERIFICATION_PLAN.md).
 
 ## 📊 Simulation Results
 
-> Screenshots below are placeholders — replace with your own after running
-> `run.do` (steps in [How to Run](#-how-to-run-questa--modelsim)).
 
 **Console summary output:**
 
@@ -403,27 +401,6 @@ ahb_project/
 
 ---
 
-## 💻 Example SystemVerilog Snippet
-
-Driver logic that pipelines address phase (beat N) with data phase (beat N-1):
-
-```systemverilog
-for (int beat = 1; beat <= num_beats; beat++) begin
-  // Data phase of the beat whose address phase just completed
-  if (txn.write) vif.drv_cb.HWDATA <= txn.write_data[beat-1];
-
-  // Address phase of the NEXT beat, driven in the same cycle
-  if (beat < num_beats) begin
-    vif.drv_cb.HADDR  <= beat_addr[beat];
-    vif.drv_cb.HTRANS <= beat_trans[beat];
-  end else begin
-    vif.drv_cb.HTRANS <= HTRANS_IDLE;
-  end
-
-  @(vif.drv_cb);
-  while (vif.drv_cb.HREADYOUT !== 1'b1) @(vif.drv_cb);
-end
-```
 
 ---
 
