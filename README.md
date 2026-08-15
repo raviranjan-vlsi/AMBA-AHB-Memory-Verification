@@ -53,7 +53,7 @@ checking, functional coverage, and assertion-based protocol compliance — in
 code that a reviewer can read top-to-bottom in under 20 minutes.
 
 <p align="center">
-<img src="docs/images/architecture_diagram.png" width="700">
+<img src="docs/images/ahb_memory_block_diagram.png" width="700">
 </p>
 
 Unlike many beginner AHB testbenches, this one does **not** hard-code burst
