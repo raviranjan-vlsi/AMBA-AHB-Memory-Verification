@@ -53,7 +53,7 @@ checking, functional coverage, and assertion-based protocol compliance — in
 code that a reviewer can read top-to-bottom in under 20 minutes.
 
 <p align="center">
-<img src="docs/images/ahb_memory_block_diagram.png" width="700">
+<img src="docs/images/ahb_memory_rtl_architecture.png" width="700">
 </p>
 
 Unlike many beginner AHB testbenches, this one does **not** hard-code burst
@@ -101,7 +101,7 @@ This project solves both explicitly — see
 ## 🏗 System Architecture
 
 <p align="center">
-<img src="docs/images/architecture_diagram.svg" width="750">
+<img src="docs/images/system_architecture.png" width="700">
 </p>
 
 <!--
@@ -131,7 +131,7 @@ it never drives the DUT.
 ## 🔄 AHB Pipeline — Correctly Implemented
 
 <p align="center">
-<img src="docs/images/pipeline_timing_diagram.svg" width="700">
+<img src="docs/images/pipeline_timing_diagram.png" width="700">
 </p>
 
 <!--
@@ -155,7 +155,7 @@ means — which is what makes the scoreboard's checking trustworthy.
 ## 🎲 Burst Address Generation
 
 <p align="center">
-<img src="docs/images/wrap4_burst_diagram.svg" width="600">
+<img src="docs/images/wap4_burst_transfer.png" width="600">
 </p>
 
 Implemented once, generically, in `ahb_pkg.sv`, and reused by the driver for
