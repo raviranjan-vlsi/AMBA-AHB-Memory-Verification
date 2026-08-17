@@ -267,77 +267,41 @@ traceability table, see [`VERIFICATION_PLAN.md`](VERIFICATION_PLAN.md).
 ---
 
 ## 📊 Simulation Results
+**Simulation Waveform:**
+<p align="center">
+<img src="docs/images/Completed_Simulation.png" width="800">
+</p>
 
 
 **Console summary output:**
 
 <p align="center">
-<img src="docs/images/simulation_summary.png" width="650">
+<img src="docs/images/Simulation_Summary.png" width="700">
 </p>
 
-```
-========================================
-AHB-LITE MEMORY VERIFICATION SUMMARY
-========================================
-Total Transactions : [INSERT]
-Passed              : [INSERT]
-Failed               : [INSERT]
-Functional Coverage : [INSERT] %
-========================================
-TEST PASSED
-========================================
-```
+
 
 **Waveform — WRAP4 burst (Questa wave viewer):**
 
 <p align="center">
-<img src="docs/images/waveform.png" width="800">
+<img src="docs/images/WRAP4_simulation.png" width="800">
 </p>
 
-<!-- INSERT a second waveform image here for back-to-back pipelined writes
-     if you'd like, e.g.:
-     <p align="center"><img src="docs/images/waveform_pipelined_writes.png" width="800"></p> -->
 
----
 
-## 📈 Functional Coverage
+
+
+## 📈 Coverage Report
 
 <p align="center">
 <img src="docs/images/coverage_report.png" width="750">
 </p>
 
-<!--
-  INSERT YOUR OWN IMAGE HERE: assertion coverage screenshot from the HTML
-  report (per-assertion hit/miss table), e.g.:
-  <p align="center"><img src="docs/images/assertion_coverage.png" width="750"></p>
--->
+<p align="center">
+<img src="docs/images/coverage_html.png" width="750">
+</p>
 
-<details>
-<summary><b>Coverpoints and crosses (click to expand)</b></summary>
 
-| Coverpoint | Bins |
-|---|---|
-| `burst_cp` | single, incr, wrap4, incr4, wrap8, incr8, wrap16, incr16 |
-| `size_cp` | byte_size, half_size, word_size |
-| `rw_cp` | read_txn, write_txn |
-| `response_cp` | okay_resp, error_resp |
-| `address_cp` | low_range, mid_range, high_range, other |
-| `burst_x_size` | cross of burst_cp × size_cp |
-| `burst_x_rw` | cross of burst_cp × rw_cp |
-| `size_x_rw` | cross of size_cp × rw_cp |
-
-Generate the HTML report yourself:
-```bash
-vsim -coverage -voptargs="+acc" work.tb_top
-# inside run.do, after `run -all`:
-coverage save ahb_coverage.ucdb
-# from a shell:
-vcover report -html -output covhtml ahb_coverage.ucdb
-```
-
-</details>
-
----
 
 ## ✅ Assertions
 
@@ -398,26 +362,6 @@ ahb_project/
 | `DATA_WIDTH` | `ahb_pkg.sv` | Data bus width | 32 |
 | `MEM_DEPTH` | `ahb_pkg.sv` | Memory depth (32-bit words) | 256 |
 | `WAIT_STATES` | `ahb_memory.sv` | Extra wait cycles per transfer | 0 |
-
----
-
-
----
-
-## ▶ How to Run (Questa / ModelSim)
-
-```tcl
-vsim -do run.do
-```
-
-or in batch mode from a shell:
-
-```bash
-vsim -c -do run.do
-```
-
-`run.do` compiles everything in the correct order, elaborates `tb_top`,
-loads useful waves, runs to completion, and writes a text coverage report.
 
 ---
 
