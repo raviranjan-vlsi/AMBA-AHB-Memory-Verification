@@ -276,7 +276,7 @@ traceability table, see [`VERIFICATION_PLAN.md`](VERIFICATION_PLAN.md).
 **Console summary output:**
 
 <p align="center">
-<img src="docs/images/Simulation_Summary.png" width="700">
+<img src="docs/images/Simulation_Summary.png" width="400">
 </p>
 
 
@@ -294,11 +294,11 @@ traceability table, see [`VERIFICATION_PLAN.md`](VERIFICATION_PLAN.md).
 ## 📈 Coverage Report
 
 <p align="center">
-<img src="docs/images/coverage_report.png" width="750">
+<img src="docs/images/coverage_report.png" width="600">
 </p>
 
 <p align="center">
-<img src="docs/images/coverage_html.png" width="750">
+<img src="docs/images/coverage_html.png" width="600">
 </p>
 
 
